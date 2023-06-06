@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cocacola Website Landing Page</title>
+  </head>
+  <body>
+    <section>
+      <div class="circle"></div>
+      <header>
+        <a href="#"><img src="logo.png" class="logo" alt="" /></a>
+        <div class="toggle" onclick="toggleMenu()"></div>
+        <ul class="navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">What's New</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+          <h2>Taste the Feeling</h2>
+          <p>Experience the refreshing sensation and unmatched pleasure with the legendary drink, Coca-Cola. Savor the deliciousness in every sip, and bring moments to life with Coca-Cola, your best companion all the time.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="imgBox">
+          <swiper-container
+            class="mySwiper"
+            pagination="true"
+            effect="coverflow"
+            grab-cursor="true"
+            centered-slides="true"
+            slides-per-view="auto"
+            coverflow-effect-rotate="50"
+            coverflow-effect-stretch="0"
+            coverflow-effect-depth="100"
+            coverflow-effect-modifier="1"
+            coverflow-effect-slide-shadows="true"
+          >
+            <swiper-slide>
+              <img src="cocacola1.png" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="cocacola2.png" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="cocacola3.png" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="cocacola4.png" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="cocacola5.png" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="cocacola6.png" />
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </div>
+      <ul class="sci">
+        <li>
+          <a href="#"><img src="facebook.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="twitter.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="instagram.png" alt="" /></a>
+        </li>
+      </ul>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js">
+      let swiper = new Swiper("swiper-container", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 200,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: "swiper-pagination",
+        },
+        loop: true,
+      });
+    </script>
+    <script>
+      function toggleMenu() {
+        const menuToggle = document.querySelector(".toggle");
+        const navigation = document.querySelector(".navigation");
+        menuToggle.classList.toggle("active");
+        navigation.classList.toggle("active");
+      }
+
+      //fungsi untuk mengaktifkan toggleMenu di ul saat memiliki class active
+      const ulElement = document.querySelector("ul.navigation");
+      ulElement.addEventListener("click", function () {
+        if (ulElement.classList.contains("active")) {
+          toggleMenu();
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  </body>
+</html>
